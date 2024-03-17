@@ -19,6 +19,7 @@ import java.util.NoSuchElementException;
 @RequestMapping("issue")
 @RequiredArgsConstructor
 public class IssueController {
+    @Autowired
     private IssueService service;
 
     @PostMapping

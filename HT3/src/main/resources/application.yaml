@@ -1,2 +1,6 @@
 SERVER:
   PORT: 8080
+
+application:
+  issue:
+    max-allowed-books: 3

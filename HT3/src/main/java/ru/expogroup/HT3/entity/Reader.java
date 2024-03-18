@@ -2,6 +2,7 @@ package ru.expogroup.HT3.entity;
 
 import lombok.Data;
 
+
 @Data
 public class Reader {
     private static long genid;
@@ -12,4 +13,5 @@ public class Reader {
         id = genid++;
         this.name = name;
     }
+
 }

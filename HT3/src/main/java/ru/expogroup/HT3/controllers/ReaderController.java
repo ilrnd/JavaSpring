@@ -8,10 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.expogroup.HT3.entity.Book;
+import ru.expogroup.HT3.entity.Issue;
 import ru.expogroup.HT3.entity.Reader;
 import ru.expogroup.HT3.services.BookService;
 import ru.expogroup.HT3.services.ReaderService;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
@@ -30,6 +32,15 @@ public class ReaderController {
                 ? new ResponseEntity<>(reader, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @GetMapping("reader/{id}/issue")
+    public ResponseEntity<List<Issue>> getIssuesByReaderId(@PathVariable long id){
+        final List<Issue> issueList = readerService.getIssues(id);
+        return issueList !=null
+                ? new ResponseEntity<>(issueList, HttpStatus.OK)
+                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
 
     @DeleteMapping("reader/{id}")
     public ResponseEntity<Reader> deleteReaderById(@PathVariable long id){

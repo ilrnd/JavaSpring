@@ -27,4 +27,12 @@ public class BookRepository {
                 .findFirst()
                 .orElse(null);
     }
+
+    public void delete(Book book){
+        list.remove(book);
+    }
+
+    public void create(Book book){
+        list.add(book);
+    }
 }

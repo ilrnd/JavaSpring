@@ -11,12 +11,14 @@ public class Issue {
     private final long id;
     private  final long idReader;
     private final long idBook;
-    private final LocalDateTime time;
+    private final LocalDateTime issued_at;
+    private LocalDateTime returned_at;
 
     public Issue(long idReader, long idBook){
         id = genId++;
         this.idReader = idReader;
         this.idBook = idBook;
-        time = LocalDateTime.now();
+        issued_at = LocalDateTime.now();
+        returned_at = null;
     }
 }

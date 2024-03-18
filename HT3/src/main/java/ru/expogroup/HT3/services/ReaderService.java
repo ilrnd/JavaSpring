@@ -6,14 +6,20 @@ import ru.expogroup.HT3.controllers.BookRequest;
 import ru.expogroup.HT3.controllers.ReaderController;
 import ru.expogroup.HT3.controllers.ReaderRequest;
 import ru.expogroup.HT3.entity.Book;
+import ru.expogroup.HT3.entity.Issue;
 import ru.expogroup.HT3.entity.Reader;
 import ru.expogroup.HT3.repository.BookRepository;
+import ru.expogroup.HT3.repository.IssueRepository;
 import ru.expogroup.HT3.repository.ReaderRepository;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class ReaderService {
     private final ReaderRepository readerRepository;
+    private final IssueRepository issueRepository;
     public Reader getById(long id){
         return readerRepository.findById(id);
     }
@@ -33,4 +39,11 @@ public class ReaderService {
         readerRepository.create(reader);
         return reader;
     }
+
+    public List<Issue> getIssues(long id){
+        List<Issue> issueList = issueRepository.getIssuesByReader(id);
+        return issueList;
+    }
+
+
 }

@@ -35,4 +35,8 @@ public class BookRepository {
     public void create(Book book){
         list.add(book);
     }
+
+    public List<Book> getBooks(){
+        return list;
+    }
 }

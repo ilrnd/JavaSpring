@@ -29,7 +29,9 @@ public class IssueRepository {
     }
 
     public List<Issue> getIssuesByReader(long readerId){
-        List<Issue> issueList = issues.stream().filter(e -> e.getIdReader() == readerId).toList();
+        List<Issue> issueList = issues.stream()
+                .filter(e -> e.getIdReader() == readerId)
+                .toList();
         return issueList;
     }
 

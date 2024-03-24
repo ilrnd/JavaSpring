@@ -14,12 +14,14 @@ import ru.expogroup.HT3.repository.ReaderRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class ReaderService {
     private final ReaderRepository readerRepository;
     private final IssueRepository issueRepository;
+    private final BookRepository bookRepository;
     public Reader getById(long id){
         return readerRepository.findById(id);
     }
@@ -48,5 +50,13 @@ public class ReaderService {
 
     public List<Reader> getAllReaders() {
         return readerRepository.getAll();
+    }
+
+    public List<Book> getBookList(long id){
+        List <Issue> issueList = getIssues(id);
+        return bookRepository.getBooks().stream()
+                .filter(book -> issueList.stream()
+                        .anyMatch(issue -> book.getId() == issue.getIdBook()))
+                .toList();
     }
 }

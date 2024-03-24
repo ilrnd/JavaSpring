@@ -1,0 +1,9 @@
+application:
+  issue:
+    max-allowed-books: 3
+
+server:
+  error:
+    include-message: ALWAYS
+  address:
+    port: 8081

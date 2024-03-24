@@ -1,14 +1,18 @@
 package ru.expogroup.HT3.services;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.expogroup.HT3.controllers.BookRequest;
 import ru.expogroup.HT3.entity.Book;
 import ru.expogroup.HT3.repository.BookRepository;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class BookService {
+    @Autowired
     private final BookRepository bookRepository;
     public Book getById(long id){
         return bookRepository.findById(id);
@@ -28,5 +32,9 @@ public class BookService {
         Book book = new Book(bookRequest.getName());
         bookRepository.create(book);
         return book;
+    }
+
+    public List<Book> getAllBooks() {
+        return bookRepository.getBooks();
     }
 }

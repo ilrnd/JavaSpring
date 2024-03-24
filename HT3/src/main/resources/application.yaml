@@ -1,5 +1,7 @@
-SERVER:
-  PORT: 8080
+server:
+  error:
+    include-message: always
+  port: 8081
 
 application:
   issue:

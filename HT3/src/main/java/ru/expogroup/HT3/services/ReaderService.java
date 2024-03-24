@@ -46,4 +46,7 @@ public class ReaderService {
     }
 
 
+    public List<Reader> getAllReaders() {
+        return readerRepository.getAll();
+    }
 }

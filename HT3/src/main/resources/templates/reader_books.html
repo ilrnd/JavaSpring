@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:border-collapse="http://java.sun.com/xml/ns/persistence/orm"
+      xmlns:book="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Book list</title>
+</head>
+<body>
+<h3>Список книг читателя <span th:text="${reader.getName()}"></span> readerId= <span th:text="${reader.getId()}"></span></h3>
+<table border 1px solid black
+       border-collapse: collapse>
+    <tr>
+        <th>Issue Id</th>
+        <th>Book id</th>
+        <th>Issued at</th>
+    </tr>
+    <tr th:each="issue: ${issues}">
+        <td th:text="${issue.getId()}"></td>
+        <td th:text="${issue.getIdBook()}"></td>
+        <td th:text="${issue.getIssued_at()}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -32,4 +32,8 @@ public class IssueRepository {
         List<Issue> issueList = issues.stream().filter(e -> e.getIdReader() == readerId).toList();
         return issueList;
     }
+
+    public List<Issue> getAll() {
+        return issues;
+    }
 }

@@ -6,15 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.expogroup.HT3.entity.Book;
 import ru.expogroup.HT3.entity.Issue;
 import ru.expogroup.HT3.services.BookService;
 
+import java.util.List;
 import java.util.NoSuchElementException;
-
-@RestController
-@RequestMapping
+@Controller
 @RequiredArgsConstructor
 @Slf4j
 public class BookController {
@@ -48,5 +49,12 @@ public class BookController {
         } catch (NoSuchElementException e){
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("ui/books")
+    public String viewAllBooks(Model model){
+        List<Book> books = bookService.getAllBooks();
+        model.addAttribute("books", books);
+        return "books";
     }
 }

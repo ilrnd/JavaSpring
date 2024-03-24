@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:border-collapse="http://java.sun.com/xml/ns/persistence/orm">
+<head>
+    <meta charset="UTF-8">
+    <title>Book list</title>
+</head>
+<body>
+<table border 1px solid black
+       border-collapse: collapse>
+    <tr>
+        <th>Id</th>
+        <th>Book name</th>
+    </tr>
+    <tr th:each="book: ${books}">
+        <td th:text="${book.getId()}"></td>
+        <td th:text="${book.getName()}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

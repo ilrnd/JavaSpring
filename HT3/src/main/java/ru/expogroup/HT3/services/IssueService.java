@@ -66,4 +66,8 @@ public class IssueService {
         }
         return issue;
     }
+
+    public List<Issue> getAll() {
+        return issueRepository.getAll();
+    }
 }

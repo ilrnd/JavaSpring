@@ -1,16 +1,14 @@
-package ru.expogroup.HT5.controllers;
+package ru.expogroup.HT5.controllers.jpa_controllers;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import ru.expogroup.HT5.controllers.base_controllers.IssueRequest;
 import ru.expogroup.HT5.entity.Issue;
-import ru.expogroup.HT5.services.IssueService;
-import ru.expogroup.HT5.services.JpaIssueService;
+import ru.expogroup.HT5.services.jpa_services.JpaIssueService;
 
 import java.util.List;
 import java.util.NoSuchElementException;

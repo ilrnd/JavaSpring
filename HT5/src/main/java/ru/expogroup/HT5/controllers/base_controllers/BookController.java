@@ -1,4 +1,4 @@
-package ru.expogroup.HT5.controllers;
+package ru.expogroup.HT5.controllers.base_controllers;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.expogroup.HT5.entity.Book;
-import ru.expogroup.HT5.services.BookService;
+import ru.expogroup.HT5.services.base_services.BookService;
 
 import java.util.List;
 import java.util.NoSuchElementException;

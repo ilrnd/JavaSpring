@@ -1,4 +1,4 @@
-package ru.expogroup.HT5.controllers;
+package ru.expogroup.HT5.controllers.base_controllers;
 
 import lombok.Data;
 

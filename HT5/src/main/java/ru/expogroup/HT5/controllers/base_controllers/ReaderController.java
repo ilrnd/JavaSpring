@@ -1,4 +1,4 @@
-package ru.expogroup.HT5.controllers;
+package ru.expogroup.HT5.controllers.base_controllers;
 
 
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.expogroup.HT5.entity.Issue;
 import ru.expogroup.HT5.entity.Reader;
-import ru.expogroup.HT5.services.ReaderService;
+import ru.expogroup.HT5.services.base_services.ReaderService;
 
 import java.util.List;
 import java.util.NoSuchElementException;

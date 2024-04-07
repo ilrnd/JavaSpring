@@ -1,4 +1,4 @@
-package ru.expogroup.HT5.repository;
+package ru.expogroup.HT5.repository.base_repository;
 
 import org.springframework.stereotype.Repository;
 import ru.expogroup.HT5.entity.Book;

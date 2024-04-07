@@ -1,14 +1,14 @@
-package ru.expogroup.HT5.services;
+package ru.expogroup.HT5.services.base_services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.expogroup.HT5.controllers.ReaderRequest;
+import ru.expogroup.HT5.controllers.base_controllers.ReaderRequest;
 import ru.expogroup.HT5.entity.Book;
 import ru.expogroup.HT5.entity.Issue;
 import ru.expogroup.HT5.entity.Reader;
-import ru.expogroup.HT5.repository.BookRepository;
-import ru.expogroup.HT5.repository.IssueRepository;
-import ru.expogroup.HT5.repository.ReaderRepository;
+import ru.expogroup.HT5.repository.base_repository.BookRepository;
+import ru.expogroup.HT5.repository.base_repository.IssueRepository;
+import ru.expogroup.HT5.repository.base_repository.ReaderRepository;
 
 import java.util.List;
 

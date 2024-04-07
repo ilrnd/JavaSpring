@@ -1,4 +1,4 @@
-package ru.expogroup.HT5.repository;
+package ru.expogroup.HT5.repository.jpa_repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import ru.expogroup.HT5.entity.Issue;

@@ -1,4 +1,4 @@
-package ru.expogroup.HT5.repository;
+package ru.expogroup.HT5.repository.base_repository;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;

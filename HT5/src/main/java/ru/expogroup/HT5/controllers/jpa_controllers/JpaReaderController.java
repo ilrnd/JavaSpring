@@ -1,44 +1,43 @@
-package ru.expogroup.HT5.controllers;
+package ru.expogroup.HT5.controllers.jpa_controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.expogroup.HT5.entity.Book;
+import ru.expogroup.HT5.controllers.base_controllers.ReaderRequest;
 import ru.expogroup.HT5.entity.Reader;
-import ru.expogroup.HT5.services.JpaBookService;
-import ru.expogroup.HT5.services.JpaReaderService;
+import ru.expogroup.HT5.services.jpa_services.JpaReaderService;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
 @RequiredArgsConstructor
-public class JpaBookController {
-    private final JpaBookService service;
+public class JpaReaderController {
+    private final JpaReaderService service;
 
-    @GetMapping("db/books")
-    public List<Book> getBooks(){
-        return service.getAllBooks();
+    @GetMapping("db/readers")
+    public List<Reader> getReaders(){
+        return service.getReaders();
     }
 
-    @GetMapping("db/book")
-    public Book findByName(@RequestParam String name){
+    @GetMapping("db/reader")
+    public Reader findByName(@RequestParam String name){
         return service.findByName(name);
     }
 
-    @PostMapping("db/book")
-    public ResponseEntity<Book> createBook(@RequestBody BookRequest bookRequest){
+    @PostMapping("db/reader")
+    public ResponseEntity<Reader> createReader(@RequestBody ReaderRequest readerRequest){
         try {
             return ResponseEntity.status(HttpStatus.CREATED)
-                    .body(service.createReader(bookRequest));
+                    .body(service.createReader(readerRequest));
         } catch (NoSuchElementException e){
             return ResponseEntity.notFound().build();
         }
     }
 
-    @DeleteMapping("db/book")
-    public ResponseEntity<Reader> deleteBookById(@RequestParam long id){
+    @DeleteMapping("db/reader")
+    public ResponseEntity<Reader> deleteReaderById(@RequestParam long id){
         final boolean deleted = service.delete(id);
         return  deleted
                 ? new ResponseEntity<>(HttpStatus.OK)

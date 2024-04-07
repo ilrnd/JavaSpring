@@ -1,4 +1,4 @@
-package ru.expogroup.HT5.controllers;
+package ru.expogroup.HT5.controllers.base_controllers;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.expogroup.HT5.entity.Issue;
-import ru.expogroup.HT5.services.IssueService;
+import ru.expogroup.HT5.services.base_services.IssueService;
 
 import java.util.List;
 import java.util.NoSuchElementException;

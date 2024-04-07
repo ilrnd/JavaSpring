@@ -1,13 +1,10 @@
-package ru.expogroup.HT5.services;
+package ru.expogroup.HT5.services.jpa_services;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
-import ru.expogroup.HT5.controllers.BookRequest;
+import ru.expogroup.HT5.controllers.base_controllers.BookRequest;
 import ru.expogroup.HT5.entity.Book;
-import ru.expogroup.HT5.entity.Reader;
-import ru.expogroup.HT5.repository.JpaBookRepository;
+import ru.expogroup.HT5.repository.jpa_repository.JpaBookRepository;
 
 import java.util.List;
 

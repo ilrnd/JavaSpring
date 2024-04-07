@@ -1,16 +1,12 @@
-package ru.expogroup.HT5.services;
+package ru.expogroup.HT5.services.jpa_services;
 
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
-import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
-import ru.expogroup.HT5.controllers.ReaderRequest;
+import ru.expogroup.HT5.controllers.base_controllers.ReaderRequest;
 import ru.expogroup.HT5.entity.Reader;
-import ru.expogroup.HT5.repository.JpaReaderRepository;
+import ru.expogroup.HT5.repository.jpa_repository.JpaReaderRepository;
 
 import java.util.List;
-import java.util.stream.StreamSupport;
 
 @Service
 @RequiredArgsConstructor

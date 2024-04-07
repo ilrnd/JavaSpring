@@ -1,11 +1,11 @@
-package ru.expogroup.HT5.services;
+package ru.expogroup.HT5.services.base_services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.expogroup.HT5.controllers.BookRequest;
+import ru.expogroup.HT5.controllers.base_controllers.BookRequest;
 import ru.expogroup.HT5.entity.Book;
-import ru.expogroup.HT5.repository.BookRepository;
+import ru.expogroup.HT5.repository.base_repository.BookRepository;
 
 import java.util.List;
 

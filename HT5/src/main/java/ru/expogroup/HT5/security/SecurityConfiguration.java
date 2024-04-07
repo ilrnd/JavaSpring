@@ -17,7 +17,7 @@ public class SecurityConfiguration {
                                 .requestMatchers("db/issues").hasAuthority("admin")
                                 // для пользователей доступен только список книг
                         .requestMatchers("db/books").authenticated()
-                        .anyRequest().denyAll()
+                        .anyRequest().permitAll()
                 )
                 .formLogin(Customizer.withDefaults())
                 .build();
